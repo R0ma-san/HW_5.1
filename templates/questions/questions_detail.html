@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<font size=6>Имя:  {{ questions_detail.first_name }}</font>
+<br>
+<p>Почта: {{ questions_detail.email }}</p>
+<br>
+<h3>Вопрос:</h3>
+<br>
+{{ question_detail.question }}
+<br>
+<div class="btn-group">
+    <a href="{% url 'questions_delete' pk=questions_detail.pk %}" class="btn btn-primary">Удалить</a>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ news_detail.title }}
+{% endblock %}
+
+
+{% block content %}
+Автор:{{news_detail.editor_name}}
+<br>
+<font size=6>{{  news_detail.title }}</font>
+<br>
+{{ news_detail.body }}
+
+<br>
+<div class="btn-group">
+    <a href="{% url 'news_edit' pk=news_detail.pk %}" class="btn btn-primary active" aria-current="page">Редактировать</a>
+    <a href="{% url 'news_delete' pk=news_detail.pk %}" class="btn btn-primary">Удалить</a>
+</div>
+{% endblock %}

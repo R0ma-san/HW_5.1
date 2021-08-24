@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+
+<title>{% block title %}Редактировать Новость{% endblock %}</title>
+
+{% block content %}
+    <div class="row" style="margin-bottom: 50px; margin-top: 50px">
+        <div class="col-md-6 offset-md-3">
+            <h3 class="text-center">Редактировать новость</h3>
+            <hr>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-success" value="Сохранить">
+            </form>
+        </div>
+    </div>
+{% endblock %}

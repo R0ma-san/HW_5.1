@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+<title>{% block title %}Задать вопрос{% endblock %}</title>
+
+{% block content %}
+    <div class="row" style="margin-bottom: 50px; margin-top: 50px">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="text-center">Задать вопрос</h3>
+            <h3>Заполните вcе поля ниже:</h3>
+                <hr>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-success" value="Отправить">
+            </form>
+        </div>
+    </div>
+{% endblock %}

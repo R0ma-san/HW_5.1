@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+<title>
+{% block title %}
+Вопросы
+{% endblock %}
+</title>
+
+{% block content %}
+
+
+{% for question in questions %}
+<div class="col-md-6">
+  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="col p-4 d-flex flex-column position-static">
+      <h3 class="mb-0">Имя: {{question.first_name}}</h3>
+      <div class="mb-1 text-muted">Почта: {{question.email}}</div>
+      <p class="mb-auto">{{question.question}}</p>
+      <a href="{% url 'questions_detail' pk=question.pk %}" class="stretched-link">Читать полностью</a>
+    </div>
+    <div class="col-auto d-none d-lg-block">
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}
